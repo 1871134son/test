@@ -1,0 +1,197 @@
+/* 전체 배경 스타일 */
+.app-container {
+  min-height: 400vh; /* 스크롤 테스트를 위한 높이 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* 배경 고정 */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 고정 이미지 */
+.image-container, .jisoo-container, .navbar {
+  position: fixed;
+  z-index: 10;
+}
+
+.image-container {
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+
+.hover-image {
+  width: 300px;
+  height: auto;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.hover-image:hover {
+  transform: scale(1.5);
+}
+
+/* JISOO 텍스트 */
+.jisoo-container {
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.jisoo-text {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 12px;
+  text-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 검은색 가로 오버레이 */
+.overlay {
+  position: fixed;
+  top: 50%; /* 화면 중앙에 배치 */
+  left: 0;
+  width: 100vw; /* 가로로 전체 너비 */
+  height: 200px; /* 가로로 긴 직사각형 높이 설정 */
+  background-color: black;
+  opacity: 0; /* 초기에는 투명 */
+  pointer-events: none; /* 클릭 방지 */
+  z-index: 50; /* 최상단에 배치 */
+  transform: translateY(-50%); /* 정확한 수직 중앙 정렬 */
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* 더미 이미지 섹션 */
+.dummy-section, .content-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 20px;
+  background-color: #000;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 50px 0; /* Footer와 간격 */
+}
+/* 더미 이미지 섹션 - Footer 위에 정렬 */
+.dummy-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 50px 0; /* Footer와 간격 */
+}
+
+/* 더미 이미지 스타일 */
+.dummy-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.dummy-image:hover {
+  transform: scale(1.1);
+}
+
+/* 화면 전체를 덮는 검은색 박스 */
+.full-screen-black-box {
+  position: fixed;           /* 항상 화면에 고정 */
+  top: 0;
+  left: 0;
+  width: 100vw;              /* 가로 전체 */
+  height: 100vh;             /* 세로 전체 */
+  background-color: black;   /* 검은색 배경 */
+  opacity: 0;                /* 초기에는 투명 */
+  z-index: 100;              /* 모든 요소 위에 표시 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;      /* 클릭 방지 */
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* 검은 박스 내부의 텍스트 */
+.full-screen-black-box p {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+
+/* Footer를 항상 하단에 위치 */
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  margin-top: auto; /* 페이지의 가장 하단으로 밀어냄 */
+}
+
+/* Navbar 스타일 */
+.navbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+}
+
+/* ITDDAA 로고 크기 확대 */
+.logo {
+  font-size: 3rem; /* 크기 2배로 확대 */
+  font-weight: bold;
+  color: white;
+  letter-spacing: 4px;
+}
+
+/* 네비게이션 링크 */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f39c12;
+}
+
+/* 메인 콘텐츠가 남은 공간을 채우도록 설정 */
+.main-content {
+  flex: 1; /* 남은 공간 채우기 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+/* 기본 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #000;
+  color: #fff;
+}
